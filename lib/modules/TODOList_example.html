@@ -1,0 +1,68 @@
+<script src="../interfaces/EventUpgrade.js"></script>
+ <script src="../components/base/UnorderedListElement.js"></script> <!-- requires EventUpgrade -->
+ <script src="../components/base/ListItemElement.js"></script> <!-- requires EventUpgrade -->
+ <script src="../components/EditableListElement.js"></script>
+ <script src="../components/EditableListItemElement.js"></script>
+ <script src="./TODOList.js"></script>
+
+<script>
+
+    var appName = 'TODOList example';
+
+    var Factory = new TODOListFactory();
+
+    function loadAll() {
+        var app = localStorage.getItem(appName);
+        if (app) {
+            app = JSON.parse(app);
+        } else {
+            app = {
+                appName: appName,
+                lists: [{
+                    placeholder: 'Today\'s tasks',
+                    items: [
+                        'finish web sockets'
+                    ]
+                }, {
+                    placeholder: 'This week\'s tasks',
+                    items: [
+                        'finish makefile',
+                        'get clustering PR ready'
+                    ]
+                }, {
+                    placeholder: 'Emergency',
+                    items: []
+                }]
+            };
+        }
+        app.appName = app.appName || appName;
+        app.lists = app.lists || [];
+
+        return app;
+    }
+
+    function saveAll() {
+        var app = {};
+        Factory.Lists.forEach(function(list) {
+            app = list.saveData(app);
+        });
+        localStorage.setItem(appName, JSON.stringify(app));
+    }
+
+    window.onload = function() {
+
+        var saveFile = loadAll();
+
+        for(var i = 0; i < saveFile.lists.length; ++i) {
+
+            var listData = saveFile.lists[i];
+
+            var list = Factory.create(listData);
+            list.on('updated', function() {
+                saveAll();
+            });
+
+            document.body.appendChild(list);
+        }
+    };
+</script>
