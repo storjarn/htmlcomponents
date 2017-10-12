@@ -1,0 +1,24 @@
+{
+  "esversion": 6,
+  "curly": true,
+  "loopfunc": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": false,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "browser": true,
+  "mocha": true,
+  "jasmine": true,
+  "browser": true,
+  "globals": {
+    "define": true,
+    "customElements": true,
+    "EventTarget": true
+  }
+}

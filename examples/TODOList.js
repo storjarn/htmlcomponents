@@ -1,16 +1,16 @@
-/* istanbul ignore next */ ;
+/* istanbul ignore next */
 (function(root, factory) {
     'use strict';
 
     /* istanbul ignore next */
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['../base/EditableListElement', '../base/EditableListItemElement'], factory);
+        define(['../lib/components/EditableListElement', '../lib/components/EditableListItemElement'], factory);
     } else if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('../base/EditableListElement'), require('../base/EditableListItemElement'));
+        module.exports = factory(require('../lib/components/EditableListElement'), require('../lib/components/EditableListItemElement'));
     } else {
         // Browser globals (root is window)
         var lib = factory(root.EditableListElement, root.EditableListItemElement);
@@ -102,7 +102,7 @@
             console.log('TODOList_class#saveData() called');
 
             var saveFile = saveObj || {};
-            saveFile.appName = saveFile.appName || $this.appName || 'TODOList example',
+            saveFile.appName = saveFile.appName || $this.appName || 'TODOList example';
             saveFile.lists = saveFile.lists || [];
 
             var listObj = {
