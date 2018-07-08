@@ -41,43 +41,39 @@
         createdCallback() {
             var $this = this;
 
-            $this.style.border = '1px outset silver';
-            $this.style.padding = '1%';
+            Object.assign(this.style, this.Styles);
 
+            // entry class
             var entry = new TODOListEntry();
             $this.Entry = entry;
 
-            entry.style.color = '#555';
-            entry.style.fontSize = '125%';
-            entry.style.fontStyle = 'italic';
-
-            entry.on('added', function(data) {
+            entry.on('added', function(ev) {
 
                 console.log('TODOListEntry_class#onadded() called');
 
-                if (data.detail.length) {
-                    $this.appendChild(data.detail[0]);
+                if (ev.detail.length) {
+                    $this.appendChild(ev.detail[0]);
                     $this.emit('updated');
                 } else {
-                    throw new Error('Empty data on TODOListEntry#.onadded: ' + JSON.stringify(data.detail));
+                    throw new Error('Empty data on TODOListEntry#.onadded: ' + JSON.stringify(ev.detail));
                 }
             });
 
-            entry.on('remove', function(data) {
+            entry.on('remove', function(ev) {
 
                 console.log('TODOListEntry_class#onremove() called');
 
-                if (data.detail.length) {
-                    $this.removeChild(data.detail[0]);
+                if (ev.detail.length) {
+                    $this.removeChild(ev.detail[0]);
                     $this.emit('updated');
                 } else {
-                    throw new Error('Empty data on TODOListEntry#.onremove: ' + JSON.stringify(data.detail));
+                    throw new Error('Empty data on TODOListEntry#.onremove: ' + JSON.stringify(ev.detail));
                 }
             });
 
-            entry.on('updated', function(data) {
+            entry.on('updated', function(ev) {
                 console.log('TODOListEntry_class#onupdated() called');
-                $this.emit('updated');
+                $this.emit('updated', ev);
             });
 
             $this.appendChild(entry);
@@ -123,6 +119,13 @@
 
             return saveFile;
         }
+
+        get Styles() {
+            return {
+                border: '1px outset silver',
+                padding: '1%'
+            };
+        }
     }
 
     class TODOListItem_class extends EditableListItemElement {
@@ -130,33 +133,49 @@
         attachedCallback() {
             var $this = this;
 
+            $this.setAttribute('selectOnEdit', 'true');
+
             $this.on('click', $this.edit);
             $this.on('blur', $this.save);
-        }
 
-        edit(ev) {
-            var $this = this;
+            $this.on('edit', function(ev) {
 
-            console.log('TODOListItem_class#edit() called');
+                console.log('TODOListItem_class#edit() called');
 
-            super.edit.call($this, ev);
+                $this.innerHTML = $this.innerHTML
+                    .replace(/<s\>/ig, '-')
+                    .replace(/<\/s\>$/ig, '')
+                    .replace(/\&nbsp\;/ig, ' ')
+                    .trim();
 
-            $this.off('keydown', $this._onkeydown);
-            $this.on('keydown', $this._onkeydown);
-            $this.selectAll();
+                $this.off('keydown', $this._onkeydown);
+                $this.on('keydown', $this._onkeydown);
+                // $this.selectAll();
+            });
+
+            $this.on('save', function(ev) {
+
+                console.log('TODOListItem_class#save() called');
+
+                var text = this.text;
+                if (text.charAt(0) === '-') {
+                    $this.innerHTML = (text.replace(/^\-/ig, '<s>') + '</s>').trim();
+                }
+
+                $this.off('keydown', $this._onkeydown);
+
+                var value = $this.html;
+                if (value) {
+                    $this.innerHTML = $this.html;
+                    $this.emit('updated', ev);
+                } else {
+                    $this.emit('remove', $this);
+                }
+            });
         }
 
         save(ev) {
-            var $this = this;
 
-            console.log('TODOListItem_class#save() called');
-
-            super.save.call($this, ev);
-
-            $this.once('click', $this.edit);
-            $this.off('keydown', $this._onkeydown);
-
-            $this.emit('updated');
         }
 
         _onkeydown(ev) {
@@ -164,26 +183,23 @@
 
             console.log('TODOListItem_class#_onkeydown() called');
 
-            if (ev.keyCode === 13) {
+            if (ev.keyCode === 13 || ev.keyCode === 27) {
                 ev.preventDefault();
-                $this.contentEditable = false;
-                var value = this.text;
-                if (value) {
-                    this.innerHTML = this.text;
-                    $this.once('click', $this.edit);
-                } else {
-                    $this.emit('remove', $this);
-                }
                 $this.blur();
             }
         }
     }
 
+    /**
+     * The first item in the list acts both as the list name (placeholder) and the new item entry function.  Try it!  Code it...
+     */
     class TODOListEntry_class extends TODOListItem_class {
 
         createdCallback() {
             this.contentEditable = true;
             this.placeholder = 'Enter an item to do';
+
+            Object.assign(this.style, this.Styles);
         }
 
         attachedCallback() {
@@ -200,25 +216,13 @@
         }
 
         edit(ev) {
-
             console.log('TODOListEntry_class#edit() called');
-
-            if (this.text === this.placeholder) {
-                this.innerHTML = '';
-            } else {
-                this.innerHTML = this.text;
-            }
+            super.edit.call(this, ev);
         }
 
         save(ev) {
-
             console.log('TODOListEntry_class#save() called');
-
-            if (this.text === '') {
-                this.innerHTML = this.placeholder;
-            } else {
-                this.innerHTML = this.html;
-            }
+            super.save.call(this, ev);
         }
 
         create(text) {
@@ -228,8 +232,9 @@
 
             var newItem = new TODOListItem();
             newItem.innerHTML = text;
+            newItem.innerHTML = newItem.html;
             newItem.on('updated', function(ev) {
-                $this.emit('updated');
+                $this.emit('updated', newItem);
             });
             newItem.on('remove', function(ev) {
                 $this.emit('remove', newItem);
@@ -242,12 +247,15 @@
 
             console.log('TODOListEntry_class#_onkeydown() called');
 
-            if (ev.keyCode === 13) {
+            if (ev.keyCode === 13 || ev.keyCode === 27) {
                 ev.preventDefault();
-                var value = $this.text;
+                var value = $this.html;
+                if (!value) {
+                    value = $this.innerHTML = $this.placeholder;
+                }
                 if ($this.placeholder !== value) {
                     if (value) {
-                        var newItem = $this.create($this.text);
+                        var newItem = $this.create($this.html);
                         $this.emit('added', newItem);
                         $this.selectAll();
                     } else {
@@ -256,6 +264,17 @@
                     }
                 }
             }
+        }
+
+        /**
+         * type-specific CSS chrome.  Refactor to a pattern (mixin)?
+         */
+        get Styles() {
+            return {
+                color: '#555',
+                fontSize: '125%',
+                fontStyle: 'italic'
+            };
         }
     }
 

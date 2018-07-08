@@ -1,0 +1,387 @@
+{
+    "a": {
+        "baseClass": "HTMLAnchorElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "area": {
+        "baseClass": "HTMLAreaElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "audio": {
+        "baseClass": "HTMLAudioElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "br": {
+        "baseClass": "HTMLBRElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "base": {
+        "baseClass": "HTMLBaseElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "body": {
+        "baseClass": "HTMLBodyElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "button": {
+        "baseClass": "HTMLButtonElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "canvas": {
+        "baseClass": "HTMLCanvasElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "dl": {
+        "baseClass": "HTMLDListElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "datalist": {
+        "baseClass": "HTMLDataListElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "dialog": {
+        "baseClass": "HTMLDialogElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "div": {
+        "baseClass": "HTMLDivElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "dd": {
+        "baseClass": "HTMLElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "dt": {
+        "baseClass": "HTMLElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "embed": {
+        "baseClass": "HTMLEmbedElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "fieldset": {
+        "baseClass": "HTMLFieldSetElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "font": {
+        "baseClass": "HTMLFontElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "form": {
+        "baseClass": "HTMLFormElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "frameset": {
+        "baseClass": "HTMLFrameSetElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "hr": {
+        "baseClass": "HTMLHRElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "head": {
+        "baseClass": "HTMLHeadElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "heading": {
+        "baseClass": "HTMLHeadingElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "html": {
+        "baseClass": "HTMLHtmlElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "iframe": {
+        "baseClass": "HTMLIFrameElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "img": {
+        "baseClass": "HTMLImageElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "input": {
+        "baseClass": "HTMLInputElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "li": {
+        "baseClass": "HTMLLIElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "label": {
+        "baseClass": "HTMLLabelElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "legend": {
+        "baseClass": "HTMLLegendElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "link": {
+        "baseClass": "HTMLLinkElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "map": {
+        "baseClass": "HTMLMapElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "media": {
+        "baseClass": "HTMLMediaElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "meta": {
+        "baseClass": "HTMLMetaElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "meter": {
+        "baseClass": "HTMLMeterElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "del": {
+        "baseClass": "HTMLModElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "ins": {
+        "baseClass": "HTMLModElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "ol": {
+        "baseClass": "HTMLOListElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "object": {
+        "baseClass": "HTMLObjectElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "optgroup": {
+        "baseClass": "HTMLOptGroupElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "option": {
+        "baseClass": "HTMLOptionElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "output": {
+        "baseClass": "HTMLOutputElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "p": {
+        "baseClass": "HTMLParagraphElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "param": {
+        "baseClass": "HTMLParamElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "picture": {
+        "baseClass": "HTMLPictureElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "pre": {
+        "baseClass": "HTMLPreElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "progress": {
+        "baseClass": "HTMLProgressElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "quote": {
+        "baseClass": "HTMLQuoteElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "script": {
+        "baseClass": "HTMLScriptElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "select": {
+        "baseClass": "HTMLSelectElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "slot": {
+        "baseClass": "HTMLSlotElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "source": {
+        "baseClass": "HTMLSourceElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "span": {
+        "baseClass": "HTMLSpanElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "style": {
+        "baseClass": "HTMLStyleElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "caption": {
+        "baseClass": "HTMLTableCaptionElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "td": {
+        "baseClass": "HTMLTableCellElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "col": {
+        "baseClass": "HTMLTableColElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "table": {
+        "baseClass": "HTMLTableElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "tr": {
+        "baseClass": "HTMLTableRowElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "template": {
+        "baseClass": "HTMLTemplateElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "textarea": {
+        "baseClass": "HTMLTextAreaElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "title": {
+        "baseClass": "HTMLTitleElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "track": {
+        "baseClass": "HTMLTrackElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "ul": {
+        "baseClass": "HTMLUListElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": ""
+    },
+    "video": {
+        "baseClass": "HTMLVideoElement",
+        "tag": "",
+        "interfaces": ["IElement", "IEventUpgrade", "IIdentifiable", "IDataBindable", "IDisposable", "IEditable"],
+        "className": "",
+        "classBody": "{\n        get test() {\n            return true;\n        }\n    }"
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "htmlcomponents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storjarn/htmlcomponents.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/storjarn/htmlcomponents/issues"
+  },
+  "homepage": "https://github.com/storjarn/htmlcomponents#readme",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "connect": "^3.3.3",
+    "grunt": "^1.0.1",
+    "grunt-bower-requirejs": "^1.1.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jasmine": "^1.0.3",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-mocha": "^0.4.11",
+    "grunt-mocha-test": "^0.12.4",
+    "grunt-template-jasmine-istanbul": "^0.3.0",
+    "grunt-template-jasmine-requirejs": "^0.2.3",
+    "mocha": "^2.0.1",
+    "requirejs": "^2.1.15",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
+  }
+}

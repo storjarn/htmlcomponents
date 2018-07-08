@@ -1,9 +1,34 @@
-<script src="../lib/mixins/EventUpgrade.js"></script>
- <script src="../lib/base/UnorderedListElement.js"></script> <!-- requires EventUpgrade -->
- <script src="../lib/base/ListItemElement.js"></script> <!-- requires EventUpgrade -->
- <script src="../lib/components/EditableListElement.js"></script>
- <script src="../lib/components/EditableListItemElement.js"></script>
- <script src="./TODOList.js"></script>
+<script src="../lib/mixins/IElement.js"></script>
+<script src="../lib/mixins/IEventUpgrade.js"></script>
+<script src="../lib/mixins/IIdentifiable.js"></script>
+<script src="../lib/mixins/IDatabindable.js"></script>
+<script src="../lib/mixins/IDisposable.js"></script>
+<script src="../lib/mixins/IEditable.js"></script>
+<script src="../lib/base/UListElement.js"></script> <!-- requires EventUpgrade -->
+<script src="../lib/base/LIElement.js"></script> <!-- requires EventUpgrade -->
+<script src="../lib/components/EditableListElement.js"></script>
+<script src="../lib/components/EditableListItemElement.js"></script>
+<script src="./TODOList.js"></script>
+
+<p>
+    htmlcomponents todo list example
+</p>
+
+<ul>
+    <li>
+        Click an item to go.  The keys <i>Enter</i> or <i>Escape</i>, or clicking away from any editable field will finish the input and save it.
+    </li>
+    <li>
+        Click each list's title header to add a new entry.
+    </li>
+    <li>
+        If the entry starts with a dash character (<i>-</i>), the entry will be stricken-through.
+    </li>
+    <li>
+        If the entry is empty, it will be deleted.
+    </li>
+
+</ul>
 
 <script>
 
@@ -26,7 +51,7 @@
                 }, {
                     placeholder: 'This week\'s tasks',
                     items: [
-                        'finish makefile',
+                        '-finish makefile',
                         'get clustering PR ready'
                     ]
                 }, {

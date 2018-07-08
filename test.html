@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <!-- <script src='./dist/index.js'> </script> -->
+    <script src='./index.js'> </script>
+    <script>
+    window.onload = function() {
+
+        var gLogo = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+
+        var lib = HTMLComponents,
+
+            Utility = lib.Utility,
+            QuerySelector = Utility.QuerySelector,
+            Components = lib.Components,
+            Base = lib.Base;
+
+        var Body = QuerySelector.$('body');
+
+        var x = new Components.EditableListElement();
+        console.log(x instanceof Components.EditableListElement);
+
+        Body.appendChild(x);
+        // var i = new lib.el('li', { innerText: 'hey' });
+        var i = new Components.EditableListItemElement();
+        i.innerText = 'hey';
+        x.appendChild(i);
+
+        // x.on('attribute', function(ev) { console.log(ev.detail[0].newValue); });
+        x.setAttribute('test', true);
+
+
+        // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+        class TestElement2 extends Components.ResizableImageElement {
+
+            constructor() {
+                super();
+                var $this = this;
+
+                $this.on('connected', function() {
+                    var $this = this;
+                    setTimeout(function() {
+                        $this.src = gLogo;
+                        setTimeout(function() {
+                            $this.style.width = '50px';
+                        }, 5000);
+                    }, 5000);
+                });
+            }
+        }
+
+        // var exportClass = document.registerElement('resize-img2', {
+        //     prototype: Object.create(TestElement2.prototype),
+        //     extends: 'img'
+        // });
+
+        // var p = new Components.ResizableImageElement();
+        var p = new TestElement2();
+        // var p = new exportClass();
+        // var p = document.createElement( 'test-element-2', { is: 'resizable-img' } );
+
+        customElements.define('test-element-2', TestElement2, {
+            extends: 'resizable-img'
+        });
+
+        Body.appendChild(p);
+        // p.emit('connected');
+        p.connectedCallback();
+
+
+        // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+        class TestElement extends Base.img {
+
+            constructor() {
+                super();
+                var $this = this;
+
+                $this.on('connected', function(ev) {
+                    $this.src = gLogo;
+                    setTimeout(function() {
+                        $this.style.width = '50px';
+                    }, 5000);
+                });
+            }
+        }
+
+        customElements.define('test-element', TestElement, {
+            extends: 'x-img'
+        });
+
+        var t = new TestElement();
+        // var t = document.createElement( 'test-element' );
+
+        setTimeout(function() {
+            Body.appendChild(t);
+            // t.emit('connected');
+            t.connectedCallback();
+        }, 5000);
+
+
+        // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+        class CE extends HTMLElement {
+          constructor() {
+            super();
+            console.info( 'ce constructed' );
+          }
+          connectedCallback() {
+            console.info( 'ce connected' );
+            this.innerHTML = 'Hello';  //can't be set in constructor()
+            this.emit('connected');
+          }
+          emit(eventName, ...args) {
+                var event = new CustomEvent(eventName, {
+                    detail: args,
+                    currentTarget: this
+                });
+                this.dispatchEvent(event);
+            }
+        }
+
+        class CEE extends CE {
+          constructor() {
+            super();
+
+            var $this = this;
+            console.info( 'cee constructed' );
+            this.addEventListener('connected', function(ev) {
+                console.info( 'cee connected' );
+                $this.innerHTML = 'Hello CEE';  //can't be set in constructor()
+            });
+          }
+          setStyle(props) {
+            Object.assign(this.style, props || {});
+            return this;
+          }
+        }
+
+        // Create a class for the element
+        class ReImage extends Base.img {
+          constructor() {
+            // Always call super first in constructor
+            super();
+
+            // constructor definition left out for brevity
+            // ...
+            // this.src = gLogo;
+          }
+
+          connectedCallback() {
+            this.src = gLogo;
+          }
+        }
+
+        // Define the new element
+        // customElements.define('resize-img2', ReImage, { extends: "img" });
+
+        var B1 = document.querySelector('#B1');
+        var B2 = document.querySelector('#B2');
+        var B3 = document.querySelector('#B3');
+
+        var ce = null;
+
+
+        B1.onclick = function () {
+          ce = document.createElement( 'c-e' );
+          // ce = document.createElement( 'x-img' );
+          // ce = new CE();
+          ce.textContent = 'unknown';
+
+        };
+
+        B2.onclick = function () {
+          document.body.appendChild( ce );
+        };
+
+        B3.onclick = function () {
+            customElements.define( 'c-e', CEE );
+            // customElements.define( 'c-e', Base.img );
+            // ce.src = gLogo;
+            // ce.setAttribute('src', gLogo);
+        };
+
+
+        var exportClass = document.registerElement('resize-img2', {
+            prototype: Object.create(ReImage.prototype),
+            extends: 'img'
+        });
+        var reimg = new exportClass();
+        // var reimg = document.createElement('img', { is: 'resize-img2' });
+        // var reimg = document.createElement('resize-img2', { is: 'resize-img2', extends: 'img' });
+        document.body.appendChild( reimg );
+        reimg.connectedCallback();
+        // reimg.src = gLogo;
+
+
+        // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+        // var z = document.createElement( 'x-unknown' );
+        var z = new Base.unknown();
+        z.textContent = "z";
+        z.on('connected', function(ev) {
+            console.log('z connected');
+        });
+        Body.appendChild(z);
+        z.emit('connected');
+
+    };
+    </script>
+
+    <button id=B1>create</button>
+    <button id=B2>attach</button>
+    <button id=B3>define</button>
+
+    <x-img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+</body>
+</html>
+
+

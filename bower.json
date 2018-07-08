@@ -1,0 +1,22 @@
+{
+  "name": "htmlcomponents",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Christopher Maples <christopher.maples@twc-contractor.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/storjarn/htmlcomponents",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "jasmine": "~2.1.3",
+    "webcomponentsjs": "^1.0.14"
+  }
+}
